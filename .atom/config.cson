@@ -14,16 +14,22 @@
     fontSize: 12
     invisibles: {}
     preferredLineLength: 120
+    showInvisibles: true
   linter:
     lintOnFly: false
-  "one-dark-ui":
-    layoutMode: "Compact"
-  "one-light-ui":
-    layoutMode: "Compact"
   "file-icons":
     onChanges: true
   tabs:
     enableVcsColoring: true
-  react: {}
   "linter-js-standard":
     honorStyleSettings: true
+    showEslintRules: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    prettierOptions:
+      bracketSpacing: false
+      parser: "flow"
+      semi: false
+      singleQuote: true
+    useEslint: true

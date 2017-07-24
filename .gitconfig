@@ -1,0 +1,8 @@
+[user]
+  name = Andrei Constantinescu
+  email = andrei@constantinescu.io
+  signingkey = 36A3A41C
+[commit]
+  gpgsign = true
+[core]
+  excludesfile = /Users/andrei/.gitignore.global

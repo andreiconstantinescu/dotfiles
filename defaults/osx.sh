@@ -142,7 +142,4 @@ defaults write org.m0k.transmission WarningDonate -bool false
 echo "- Hide the legal disclaimer."
 defaults write org.m0k.transmission WarningLegal -bool false
 
-echo "- Enable QlMarkdown selecting text."
-defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder
-
 echo "\nDone. Moving on."
