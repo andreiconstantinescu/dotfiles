@@ -27,8 +27,6 @@ brew install sl
 
 echo "Installing GPG tools."
 brew install gpg
-brew install gpg-agent
-brew insatll pinentry-mac
 
 echo "Cleaning up the Cellar."
 brew cleanup
