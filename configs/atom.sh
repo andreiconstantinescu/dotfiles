@@ -9,6 +9,7 @@ apm-beta install sort-lines
 apm-beta install flow-ide
 apm-beta install toggle-quotes
 apm-beta install file-icons
+apm-beta install language-babel
 apm-beta install linter
 apm-beta install linter-eslint
 apm-beta install linter-js-standard
