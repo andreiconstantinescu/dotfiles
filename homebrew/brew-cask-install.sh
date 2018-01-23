@@ -14,5 +14,6 @@ brew cask install telegram
 brew cask install keybase
 brew cask install docker
 brew cask install captain
+brew cask install caskroom/drivers/logitech-options
 
 echo "Successfully brewed cask apps.\n"
