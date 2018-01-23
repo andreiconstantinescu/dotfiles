@@ -8,7 +8,6 @@ echo "Installing essentials."
 brew install fish
 brew install hub
 brew install kryptco/tap/kr
-brew install ssh-copy-id
 brew install tree
 
 echo "Installing dev deps."
@@ -24,9 +23,6 @@ brew install figlet
 brew install fortune
 brew install homebrew/games/nethack
 brew install sl
-
-echo "Installing GPG tools."
-brew install gpg
 
 echo "Cleaning up the Cellar."
 brew cleanup
