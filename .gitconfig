@@ -5,3 +5,5 @@
   gpgsign = true
 [core]
   excludesfile = /Users/andrei/.gitignore.global
+[gpg]
+  program = /usr/local/bin/krgpg
