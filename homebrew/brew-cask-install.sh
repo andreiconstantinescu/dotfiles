@@ -16,5 +16,6 @@ brew cask install docker
 brew cask install captain
 brew cask install caskroom/drivers/logitech-options
 brew cask install spotify
+brew cask install slack
 
 echo "Successfully brewed cask apps.\n"
