@@ -12,9 +12,9 @@ apm install file-icons
 apm install language-babel
 apm install linter
 apm install linter-eslint
-apm install linter-js-standard
 apm install linter-ui-default
 apm install prettier-atom
 apm install intentions
 apm install busy-signal
 apm install hyperclick
+apm install highlight-selected
