@@ -1,14 +1,8 @@
 #!/bin/sh
+CURRENT_NAMESPACE='defaults'
 
-echo "The defaults are being put in place."
-
-echo "Admin, anyone?"
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished.
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-echo "\nGlobal."
+echo "task started.\n"
+echo "Global settings.\n"
 
 echo "- Expand save panel."
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -25,7 +19,18 @@ echo "- Use scroll gesture with the Ctrl (^) modifier key to zoom."
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
-echo "\nMenu bar."
+echo "- Enable Firewalll."
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+echo "Screensaver.\n"
+
+echo "- Set immidiate lock."
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+echo "- Ask for password."
+defaults write com.apple.screensaver askForPassword -int 1
+
+echo "Menu bar settings.\n"
 
 echo "- Customize the clock look."
 defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  HH:mm:ss"
@@ -33,7 +38,7 @@ defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  HH:mm:ss
 echo "- Change the battery to show the percentage."
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
-echo "\nKeyboard."
+echo "Keyboard settings.\n"
 
 echo "- Set Keyboard > Key Repeat to be the fastest possible from System Preferences."
 defaults write NSGlobalDomain KeyRepeat -integer 2
@@ -41,7 +46,13 @@ defaults write NSGlobalDomain KeyRepeat -integer 2
 echo "- Set Keyboard > Delay Until Repeat to be the fastest possible from System Preferences."
 defaults write NSGlobalDomain InitialKeyRepeat -integer 15
 
-echo "\nTrackpad."
+echo "- Disable keyboard autocorrect."
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+
+echo "- Enable Tab in modal dialogs."
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+echo "Trackpad.\n"
 
 echo "- Enable three finger drag."
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -integer 1
@@ -55,7 +66,7 @@ defaults write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -intege
 echo "- Enable four finger Exposé."
 defaults write com.apple.dock showAppExposeGestureEnabled -integer 1
 
-echo "\nDock."
+echo "Dock.\n"
 
 echo "- Turn on dock autohiding."
 defaults write com.apple.Dock autohide -boolean true
@@ -66,7 +77,7 @@ defaults write com.apple.Dock tilesize -integer 48
 echo "- Wipe all (default) app icons from the Dock."
 defaults write com.apple.dock persistent-apps -array ""
 
-echo "\nFinder."
+echo "Finder.\n"
 
 echo "- Set default path to HOME directory."
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
@@ -98,7 +109,7 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
-echo "\nSafari."
+echo "Safari.\n"
 
 echo "- Set home page to about:blank."
 defaults write com.apple.Safari HomePage -string "about:blank"
@@ -117,13 +128,13 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
-echo "\nSpotlight."
+echo "Spotlight.\n"
 
 echo "- Disable Spotlight indexing for any volume that gets mounted and has not yet been indexed before."
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
-echo "\nTransmission.app."
+echo "Transmission.app.\n"
 
 echo "- Use ~/Downloads to store incomplete downloads, and as default download folder."
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
@@ -142,4 +153,4 @@ defaults write org.m0k.transmission WarningDonate -bool false
 echo "- Hide the legal disclaimer."
 defaults write org.m0k.transmission WarningLegal -bool false
 
-echo "\nDone. Moving on."
+echo "[deafaults]: task completed."
