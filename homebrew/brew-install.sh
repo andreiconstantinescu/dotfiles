@@ -23,6 +23,8 @@ brew install figlet
 brew install fortune
 brew install homebrew/games/nethack
 brew install sl
+brew install toilet
+brew install cmatrix
 
 echo "- Cleaning up the Cellar."
 brew cleanup
