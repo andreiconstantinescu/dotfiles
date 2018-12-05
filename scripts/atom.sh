@@ -1,6 +1,8 @@
 #!/bin/sh
 
-echo "- Installing atom packages."
+printf "%s\n\n"  "Atom time."
+printf "%s\n"  "- Installing atom packages."
+
 apm install atom-ide-debugger-node
 apm install atom-ide-ui
 apm install base16-ocean-dark-spacegray
@@ -22,3 +24,6 @@ apm install sort-lines
 apm install teletype
 apm install time-status
 apm install wakatime
+
+printf "%s\n"  "- Configuring Atom."
+cp -rv ../assets/.atom ~

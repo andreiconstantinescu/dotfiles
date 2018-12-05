@@ -1,27 +1,33 @@
 #!/bin/sh
 
-echo "Initialisation started..."
+printf "%s\n\n"  " Setup"
 
-echo "sudo powers needed."
+printf "%s\n"  "Admin powers needed."
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-./defaults/macos.sh
+# Configure MacOS settings.
+./scripts/macos.sh $1
 
-./homebrew/install.sh $1
+# Install homebrew and apps.
+./scripts/homebrew.sh $1
 
-./configs/atom.sh
+# Configure Atom and install packages.
+./scripts/atom.sh
 
-./configs/itemr2/config.sh
+# Configure iTerm2.
+./scripts/iterm2.sh
 
-cp .gitconfig ~
-cp .gitignore.global ~
+# Configure SSH.
+./scripts/git.sh
 
-cp -rv .config ~
-cp -rv .atom ~
-cp -rv .ssh ~
-cp -rv fonts/*.* ~/Library/Fonts/
+# Copy extra assets
+./scripts/assets/sh
 
-echo "All done!.\n"
+printf "%s\n"  "Setup Finished!"
+
+printf "%s\n"  "Press any key to continue..."
+read -p  "" -n1 -s
+reboot

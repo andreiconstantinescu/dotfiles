@@ -14,23 +14,23 @@
 
 if begin; status --is-interactive; and not functions -q -- iterm2_status; and [ "$ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX""$TERM" != screen ]; end
   function iterm2_status
-    printf "\033]133;D;%s\007" $argv
+    printf "%s\n"  "\033]133;D;%s\007" $argv
   end
 
   # Mark start of prompt
   # function iterm2_prompt_mark
-  #   printf "\033]133;A\007"
+  #   printf "%s\n"  "\033]133;A\007"
   # end
   #
   # # Mark end of prompt
   function iterm2_prompt_end
-  #   printf "\033]133;B\007"
+  #   printf "%s\n"  "\033]133;B\007"
   # end
 
   # Tell terminal to create a mark at this location
   function iterm2_preexec
     # For other shells we would output status here but we can't do that in fish.
-    printf "\033]133;C;\007"
+    printf "%s\n"  "\033]133;C;\007"
   end
 
   # Usage: iterm2_set_user_var key value
@@ -39,12 +39,12 @@ if begin; status --is-interactive; and not functions -q -- iterm2_status; and [ 
   # Gives a variable accessible in a badge by \(user.currentDirectory)
   # Calls to this go in iterm2_print_user_vars.
   function iterm2_set_user_var
-    printf "\033]1337;SetUserVar=%s=%s\007" "$argv[1]" (printf "%s" "$argv[2]" | base64 | tr -d "\n")
+    printf "%s\n"  "\033]1337;SetUserVar=%s=%s\007" "$argv[1]" (printf "%s\n"  "%s" "$argv[2]" | base64 | tr -d "\n")
   end
 
   # iTerm2 inform terminal that command starts here
   function iterm2_precmd
-    printf "\033]1337;RemoteHost=%s@%s\007\033]1337;CurrentDir=%s\007" $USER $iterm2_hostname $PWD
+    printf "%s\n"  "\033]1337;RemoteHost=%s@%s\007\033]1337;CurrentDir=%s\007" $USER $iterm2_hostname $PWD
 
     # Users can define a function called iterm2_print_user_vars.
     # It should call iterm2_set_user_var and produce no other output.
@@ -72,8 +72,8 @@ if begin; status --is-interactive; and not functions -q -- iterm2_status; and [ 
   function fish_prompt --description 'Write out the prompt; do not replace this. Instead, change fish_prompt before sourcing .iterm2_shell_integration.fish, or modify iterm2_fish_prompt instead.'
      # Remove the trailing newline from the original prompt. This is done
      # using the string builtin from fish, but to make sure any escape codes
-     # are correctly interpreted, use %b for printf.
-     printf "%b" (string join "\n" (iterm2_fish_prompt))
+     # are correctly interpreted, use %b for printf "%s\n" .
+     printf "%s\n"  "%b" (string join "\n" (iterm2_fish_prompt))
 
      # iterm2_prompt_end
   end
@@ -96,6 +96,6 @@ if begin; status --is-interactive; and not functions -q -- iterm2_status; and [ 
   end
 
   iterm2_precmd
-  printf "\033]1337;ShellIntegrationVersion=6;shell=fish\007"
+  printf "%s\n"  "\033]1337;ShellIntegrationVersion=6;shell=fish\007"
 end
 alias imgcat=~/.iterm2/imgcat;alias imgls=~/.iterm2/imgls;alias it2attention=~/.iterm2/it2attention;alias it2check=~/.iterm2/it2check;alias it2copy=~/.iterm2/it2copy;alias it2dl=~/.iterm2/it2dl;alias it2getvar=~/.iterm2/it2getvar;alias it2setcolor=~/.iterm2/it2setcolor;alias it2setkeylabel=~/.iterm2/it2setkeylabel;alias it2ul=~/.iterm2/it2ul;alias it2universion=~/.iterm2/it2universion
