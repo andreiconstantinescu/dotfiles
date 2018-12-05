@@ -6,19 +6,21 @@
   "atom-ide-ui":
     "atom-ide-code-format":
       formatOnType: false
+    "atom-ide-diagnostics-ui": {}
     "atom-ide-outline-view":
       nameOnly: true
     "atom-ide-terminal":
       fontFamily: "\"Fira Code\""
       lineHeight: 1.2
-      rendererType: "canvas"
     use:
-      "atom-ide-code-actions": "never"
+      "atom-ide-code-actions": "always"
+      "atom-ide-code-format": "always"
+      "atom-ide-code-highlight": "always"
       "atom-ide-console": "always"
       "atom-ide-datatip": "never"
-      "atom-ide-debugger": "always"
-      "atom-ide-diagnostics": "never"
-      "atom-ide-diagnostics-ui": "never"
+      "atom-ide-definitions": "always"
+      "atom-ide-diagnostics": "always"
+      "atom-ide-diagnostics-ui": "always"
       "atom-ide-outline-view": "always"
       "atom-ide-terminal": "always"
   core:
@@ -26,7 +28,10 @@
     disabledPackages: [
       "teletype"
       "about"
+      "linter"
+      "linter-ui-default"
     ]
+    packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
   editor:
     fontFamily: "\"Fira Code\""
@@ -48,7 +53,10 @@
     diagnosticsEnabled: false
     ignoreFlow: false
   linter: {}
+  "linter-eslint":
+    fixOnSave: true
   "linter-ui-default":
+    panelHeight: 415
     showPanel: true
   mprettier:
     formatOnSave:
@@ -57,11 +65,15 @@
       bracketSpacing: false
       semi: false
       singleQuote: true
+    useEslint: false
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
     useEslint: true
   tabs:
     enableVcsColoring: true
   wakatime:
-    apikey: "Saved in your ~/.wakatime.cfg file"
+    apikey: "Enter your api key..."
     showStatusBarIcon: false
   welcome:
     showOnStartup: false
