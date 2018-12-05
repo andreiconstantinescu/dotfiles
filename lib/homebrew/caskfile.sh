@@ -15,7 +15,7 @@ brew cask install docker
 brew cask install captain
 brew cask install slack
 
-if [[ $1 != *"-w"* ]]; then
+if [[ $1 != $FLAG ]]; then
 printf "%s\n"  "- NSFW packages"
 
 brew cask install transmission

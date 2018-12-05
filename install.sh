@@ -1,4 +1,5 @@
 #!/bin/sh
+FLAG=-w
 
 printf "%s\n\n"  " Setup"
 

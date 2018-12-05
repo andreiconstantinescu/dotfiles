@@ -12,7 +12,7 @@ printf "%s\n"  "- Devtools."
 brew install node
 brew install yarn
 
-if [[ $1 != *"-w"* ]]; then
+if [[ $1 != $FLAG ]]; then
   printf "%s\n"  "- Games and cool stuff."
   brew install cheat
   brew install cowsay
