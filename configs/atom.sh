@@ -1,19 +1,24 @@
 #!/bin/sh
 
 echo "- Installing atom packages."
-apm install autocomplete-paths
+apm install atom-ide-debugger-node
+apm install atom-ide-ui
 apm install base16-ocean-dark-spacegray
-apm install editorconfig
+apm install busy-signal
 apm install case-switch
-apm install sort-lines
-apm install flow-ide
 apm install file-icons
-apm install language-babel
+apm install highlight-selected
+apm install hyperclick
+apm install ide-css
+apm install ide-json
+apm install ide-typescript
+apm install intentions
+apm install language-fish-shell
 apm install linter
 apm install linter-eslint
 apm install linter-ui-default
-apm install prettier-atom
-apm install intentions
-apm install busy-signal
-apm install hyperclick
-apm install highlight-selected
+apm install mprettier
+apm install sort-lines
+apm install teletype
+apm install time-status
+apm install wakatime
