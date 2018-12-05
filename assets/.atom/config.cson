@@ -56,7 +56,7 @@
   "linter-eslint":
     fixOnSave: true
   "linter-ui-default":
-    panelHeight: 415
+    panelHeight: 210
     showPanel: true
   mprettier:
     formatOnSave:
@@ -66,14 +66,10 @@
       semi: false
       singleQuote: true
     useEslint: false
-  "prettier-atom":
-    formatOnSaveOptions:
-      enabled: true
-    useEslint: true
   tabs:
     enableVcsColoring: true
   wakatime:
-    apikey: "Enter your api key..."
+    apikey: "Saved in your ~/.wakatime.cfg file"
     showStatusBarIcon: false
   welcome:
     showOnStartup: false
