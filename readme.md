@@ -1,16 +1,37 @@
-# the dotfiles.
-Here are my dotfiles. They are `OSX`-only, feel free to fork it and add support for Linux as well... and PR! :smile:
+# Dotfiles.
 
-### install.
+My personal `MacOS` ready personal dotfiles for setting up a new computer. It features:
 
-Just clone the repo and run `./install.sh`.
+- macOS defaults.
+- homebrew CLI tools and GUI apps.
+- shell and iTerrm 2 configs.
+- global `git` settings.
+- `atom` editor packages installs and configs.
 
-### problem?
+## Manual
 
-Fork and PR. 🍺
+It features an option that will strip the apps of nsfw ones (work mode).
 
-### credits.
+```
+  -w: Work Mode
+```
+
+## Install.
+
+```sh
+  > git clone https://github.com/andreiconstantinescu/dotfiles.git
+  > cd dotfiles/
+  > ./install.sh [-w]
+```
+
+## Feedback/Suggestions.
+
+`PR`s are more than welcomed.
+
+## Credits.
+
 Heavily inspired by:
+
 - [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
 - [Steve Losh](https://bitbucket.org/sjl/dotfiles/src/e8ba45f413665278c11f2de3a1d67a1da3832d34/osx.sh?at=default)
 - [Gary Bernhardt](https://github.com/garybernhardt/dotfiles)
@@ -19,6 +40,6 @@ Heavily inspired by:
 - [tvararu](https://github.com/tvararu/dotfiles)
 - [tonsky](https://github.com/tonsky/FiraCode) - FiraCode Font.
 
-### license.
+## License.
 
 MIT.
