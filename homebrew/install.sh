@@ -14,6 +14,6 @@ fi
 ./homebrew/brew-install.sh
 
 # Run the provided caskfile.
-./homebrew/brew-cask-install.sh
+./homebrew/brew-cask-install.sh $1
 
 echo "Homebrew install done.\n"

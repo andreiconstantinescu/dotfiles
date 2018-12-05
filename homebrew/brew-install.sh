@@ -11,20 +11,18 @@ brew install kryptco/tap/kr
 brew install tree
 
 echo "- Installing dev deps."
-brew install heroku-toolbelt
 brew install node
 brew install yarn
 
 echo "- Installing games and cool stuff."
-brew install archey
 brew install cheat
 brew install cowsay
 brew install figlet
 brew install fortune
 brew install homebrew/games/nethack
 brew install sl
-brew install toilet
 brew install cmatrix
+brew install zork
 
 echo "- Cleaning up the Cellar."
 brew cleanup

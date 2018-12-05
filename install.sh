@@ -10,11 +10,12 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ./defaults/macos.sh
 
-./homebrew/install.sh
+./homebrew/install.sh $1
 
 ./configs/atom.sh
 
 ./configs/itemr2/config.sh
+
 cp .gitconfig ~
 cp .gitignore.global ~
 
