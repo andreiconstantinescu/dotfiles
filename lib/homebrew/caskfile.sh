@@ -2,7 +2,7 @@
 
 printf "%s\n\n"  "- Brewing GUI apps."
 
-printf "%s\n"  "- SAFE packages"
+printf "%s\n"  "- SAFE packages."
 
 brew cask install 1password
 brew cask install alfred
@@ -16,7 +16,7 @@ brew cask install captain
 brew cask install slack
 
 if [[ $1 != $FLAG ]]; then
-printf "%s\n"  "- NSFW packages"
+printf "%s\n"  "- NSFW packages."
 
 brew cask install transmission
 brew cask install telegram
