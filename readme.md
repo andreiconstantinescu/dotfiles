@@ -42,4 +42,4 @@ Heavily inspired by:
 
 ## License.
 
-MIT.
+[MIT](LICENSE)
