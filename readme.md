@@ -1,6 +1,6 @@
 # Dotfiles.
 
-My personal `MacOS` ready personal dotfiles for setting up a new computer. It features:
+My personal `MacOS` ready dotfiles for setting up a new computer. It features:
 
 - macOS defaults.
 - homebrew CLI tools and GUI apps.
