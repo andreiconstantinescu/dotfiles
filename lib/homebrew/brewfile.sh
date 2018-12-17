@@ -11,6 +11,7 @@ brew install tree
 printf "%s\n"  "- Devtools."
 brew install node
 brew install yarn
+brwe install fx
 
 if [[ $1 != $FLAG ]]; then
   printf "%s\n"  "- Games and cool stuff."
