@@ -16,14 +16,17 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install homebrew and apps.
 ./scripts/homebrew.sh $1
 
-# # Configure iTerm2.
+# Configure iTerm2.
 ./scripts/iterm2.sh
 
-# # Configure SSH.
+# Configure SSH.
 ./scripts/git.sh
 
-# # Copy extra assets
-./scripts/assets/sh
+# Configure VS Code.
+./scripts/vscode.sh
+
+# Copy extra assets
+./scripts/assets.sh
 
 printf "%s\n"  "Setup Finished!"
 
