@@ -1,6 +1,4 @@
 #!/bin/sh
-printf "%s\n\n\n"  "MacOS time."
-
 printf "%s\n\n"  "Global settings."
 
 printf "%s\n"  "- Expand save panel."
@@ -153,7 +151,5 @@ if [ $1 ] && [ $1 == $FLAG ]; then
 
   printf "%s\n"  "- Hide the legal disclaimer."
   defaults write org.m0k.transmission WarningLegal -bool false
-
+  
 fi
-
-printf "%s\n"  "MacOS configures successfully"

@@ -17,7 +17,7 @@ else
 fi
 
 # Install common brew packages.
-# ../lib/homebrew/common/common.sh
+../lib/homebrew/common/common.sh
 
 # Install personal brew packages.
 if [ $1 ] && [ $1 == $FLAG ]; then

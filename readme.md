@@ -11,7 +11,7 @@ My personal `MacOS` ready dotfiles for setting up a new computer. It features:
 
 By default, it will install workplace safe packages, to install the personal packages, pass the `-p` flag.
 
-```
+```bash
   -p: Personal Packages
 ```
 

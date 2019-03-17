@@ -1,7 +1,8 @@
 #!/bin/sh
-printf "%s\n"  "Install brew personal packages:"
+printf "%s\n\n"  "Install brew personal packages:"
 cd ../lib/homebrew/personal
 brew bundle
+printf "%s\n"  "Brew personal packages installed."
 
 cd ../../../scripts
 
