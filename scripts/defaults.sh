@@ -2,10 +2,6 @@
 
 printf "%s\n\n"  "Configuring MacOS."
 
-cd ./scripts
-
-../lib/defaults/macos.sh $1
-
-cd ../
+./lib/defaults/macos.sh $1
 
 printf "%s\n"  "MacOS configured successfully."
