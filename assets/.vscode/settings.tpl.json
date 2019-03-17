@@ -1,0 +1,7 @@
+{
+  "sync.gist": "<VSCODE_SETTINGS_SYNC_GIST_ID>",
+  "sync.autoDownload": true,
+  "sync.askGistName": true,
+  "sync.quietSync": true,
+  "sync.autoUpload": true
+}
