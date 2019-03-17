@@ -1,34 +1,33 @@
-# Dotfiles.
+# Dotfiles
 
 My personal `MacOS` ready dotfiles for setting up a new computer. It features:
 
 - macOS defaults.
 - homebrew CLI tools and GUI apps.
-- shell and iTerrm 2 configs.
+- shell and iTerm2 configs.
 - global `git` settings.
-- `atom` editor packages installs and configs.
 
 ## Manual
 
-It features an option that will strip the apps of nsfw ones (work mode).
+By default, it will install workplace safe packages, to install the personal packages, pass the `-p` flag.
 
 ```
-  -w: Work Mode
+  -p: Personal Packages
 ```
 
-## Install.
+## Install
 
 ```sh
   > git clone https://github.com/andreiconstantinescu/dotfiles.git
   > cd dotfiles/
-  > ./install.sh [-w]
+  > ./install.sh [-p]
 ```
 
-## Feedback/Suggestions.
+## Feedback/Suggestions
 
 `PR`s are more than welcomed.
 
-## Credits.
+## Credits
 
 Heavily inspired by:
 
@@ -40,6 +39,6 @@ Heavily inspired by:
 - [tvararu](https://github.com/tvararu/dotfiles)
 - [tonsky](https://github.com/tonsky/FiraCode) - FiraCode Font.
 
-## License.
+## License
 
 [MIT](LICENSE)
