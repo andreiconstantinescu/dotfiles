@@ -6,6 +6,7 @@ My personal `MacOS` ready dotfiles for setting up a new computer. It features:
 - homebrew CLI tools and GUI apps.
 - shell and iTerm2 configs.
 - global `git` settings.
+- VS Code config.
 
 ## Manual
 
@@ -14,6 +15,10 @@ By default, it will install workplace safe packages, to install the personal pac
 ```bash
   -p: Personal Packages
 ```
+
+### ⚠️ Caveats
+
+For VS Code to be confured properly you need to add the existing `Settings Sync` gist ID in [here](assets/.vscode/settings.json#L2) and then in the extesion settings the Github Token for it to upload/download the settings and extensions. Read more info about the extension [here](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync).
 
 ## Install
 
