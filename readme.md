@@ -10,15 +10,21 @@ My personal `MacOS` ready dotfiles for setting up a new computer. It features:
 
 ## Manual
 
+### Packages installation options
+
 By default, it will install workplace safe packages, to install the personal packages, pass the `-p` flag.
 
 ```bash
   -p: Personal Packages
 ```
 
-### ⚠️ Caveats
+### VS Code settings and packages sync
 
-For VS Code to be confured properly you need to add the existing `Settings Sync` gist ID in [here](assets/.vscode/settings.json#L2) and then in the extesion settings the Github Token for it to upload/download the settings and extensions. Read more info about the extension [here](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync).
+The only extension installed is [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) in order to enable the sync and upload/download of existing settings and packages.
+
+In order to sync an existing config at install, you will be prompted to add the `gistId` of the existing settings gist and the `githubToken` in order to be able to access and update the private gist.
+
+If none of the keys are provided, when opening VS Code you will be prompted to provide them.
 
 ## Install
 
