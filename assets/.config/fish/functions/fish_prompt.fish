@@ -4,7 +4,7 @@
   # set -g theme_display_git_untracked no
 
 function _git_branch_name
-  printf "%s\n"  (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
 end
 
 function _is_git_dirty
@@ -14,7 +14,7 @@ function _is_git_dirty
   if [ "$theme_display_git_untracked" = 'no' -o "$show_untracked" = 'false' ]
     set -g untracked '--untracked-files=no'
   end
-  printf "%s\n"  (command git status -s --ignore-submodules=dirty ^/dev/null)
+  echo (command git status -s --ignore-submodules=dirty ^/dev/null)
 end
 
 function fish_prompt
@@ -42,31 +42,5 @@ function fish_prompt
       set git_info "$git_info$dirty"
     end
   end
-  printf "%s\n"  -n -s $arrow ' ' $cwd $git_info $normal ' '
-
-
-  # wakatime for fish
-  #
-  # Add this to the fish_prompt function in
-  # ~/.config/fish/functions/fish_prompt.fish
-  # (or if it doesn't exist, create it).
-
-
-  # We've also included an example of how
-  # to determine the current project from the pwd.
-  # It'll only work without alterations if
-  # you happen to keep all your projects in
-  # ~/Sites/ on a Mac, but it's easy to modify
-
-  set -l project
+  echo -n -s $arrow ' ' $cwd $git_info $normal ' '
 end
-
-  if printf "%s\n"  (pwd) | grep -qEi "^/Users/$USER/github/"
-      set  project (printf "%s\n"  (pwd) | sed "s#^/Users/$USER/github/\\([^/]*\\).*#\\1#")
-  else if printf "%s\n"  (pwd) | grep -qEi "^/Users/$USER/projects/"
-      set  project (printf "%s\n"  (pwd) | sed "s#^/Users/$USER/projects/\\([^/]*\\).*#\\1#")
-  else
-      set  project "Terminal"
-  end
-
-wakatime --write --plugin "fish-wakatime/0.0.1" --entity-type app --project "$project" --entity (printf "%s\n"  $history[1] | cut -d ' ' -f1) 2>&1 > /dev/null&

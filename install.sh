@@ -1,5 +1,6 @@
 #!/bin/sh
-FLAG=-w
+
+export FLAG=-p
 
 printf "%s\n\n"  " Setup"
 
@@ -10,21 +11,18 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Configure MacOS settings.
-./scripts/macos.sh $1
+# ./lib/defaults/macos.sh $1
 
 # Install homebrew and apps.
 ./scripts/homebrew.sh $1
 
-# Configure Atom and install packages.
-./scripts/atom.sh
-
-# Configure iTerm2.
+# # Configure iTerm2.
 ./scripts/iterm2.sh
 
-# Configure SSH.
+# # Configure SSH.
 ./scripts/git.sh
 
-# Copy extra assets
+# # Copy extra assets
 ./scripts/assets/sh
 
 printf "%s\n"  "Setup Finished!"

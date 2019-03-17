@@ -133,7 +133,7 @@ printf "%s\n"  "- Disable Spotlight indexing for any volume that gets mounted an
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
-if [[ $1 != $FLAG ]]; then
+if [ $1 ] && [ $1 == $FLAG ]; then
 
   printf "%s\n\n"  "Transmission.app."
 

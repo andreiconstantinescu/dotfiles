@@ -1,6 +1,7 @@
 #!/bin/sh
 
 printf "%s\n\n" "Homebrew check."
+cd ./scripts
 
 # Install Homebrew if it's not already present.
 if command -v brew >/dev/null 2>&1; then
@@ -15,12 +16,14 @@ else
   printf "%s\n"  "Homebrew successfully installed."
 fi
 
+# Install common brew packages.
+# ../lib/homebrew/common/common.sh
 
+# Install personal brew packages.
+if [ $1 ] && [ $1 == $FLAG ]; then
+  ../lib/homebrew/personal/personal.sh
+fi
 
-# Install CLI tools from the brewfile.
-../lib/homebrew/brewfile.sh $1
-
-# Install apps from the caskfile.
-../lib/homebrew/caskfile.sh $1
-
+brew cleanup
+cd ../
 printf "%s\n"  "Homebrew apps and tool successfully installed."
