@@ -125,12 +125,6 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
-printf "%s\n\n"  "Spotlight."
-
-printf "%s\n"  "- Disable Spotlight indexing for any volume that gets mounted and has not yet been indexed before."
-# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-
 if [ $1 ] && [ $1 == $FLAG ]; then
 
   printf "%s\n\n"  "Transmission.app."
