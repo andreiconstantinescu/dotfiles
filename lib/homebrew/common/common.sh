@@ -1,6 +1,6 @@
 #!/bin/sh
 printf "%s\n\n"  "Install brew common packages:"
-cd ../lib/homebrew/common
+cd ./lib/homebrew/common
 brew bundle
 printf "%s\n"  "Common brew packages installed."
 

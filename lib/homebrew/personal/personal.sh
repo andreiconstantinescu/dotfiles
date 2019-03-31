@@ -1,6 +1,6 @@
 #!/bin/sh
 printf "%s\n\n"  "Install brew personal packages:"
-cd ../lib/homebrew/personal
+cd ./lib/homebrew/personal
 brew bundle
 printf "%s\n"  "Brew personal packages installed."
 
