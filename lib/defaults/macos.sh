@@ -125,6 +125,9 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
+printf "%s\n"  "- Change search engine to DuckDuckGo."
+
+
 if [ $1 ] && [ $1 == $FLAG ]; then
 
   printf "%s\n\n"  "Transmission.app."
