@@ -11,7 +11,7 @@ sudo -v -E
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Configure MacOS settings.
-./scrips/defaults.sh $1
+./scripts/defaults.sh $1
 
 # Install homebrew and apps.
 ./scripts/homebrew.sh $1
