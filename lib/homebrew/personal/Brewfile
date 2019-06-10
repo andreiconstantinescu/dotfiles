@@ -1,8 +1,11 @@
 brew "archey"
 brew "cowsay"
 brew "fortune"
+brew "heroku/brew/heroku"
 brew "nethack"
+brew "postgresql", restart_service: true
 brew "sl"
+brew "youtube-dl"
 cask "calibre"
 cask "kindle"
 cask "logitech-options"
