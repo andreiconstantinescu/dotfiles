@@ -71,8 +71,15 @@ defaults write com.apple.Dock autohide -boolean true
 printf "%s\n"  "- Resize dock tiles."
 defaults write com.apple.Dock tilesize -integer 48
 
-printf "%s\n"  "- Wipe all (default) app icons from the Dock."
-defaults write com.apple.dock persistent-apps -array ""
+printf "%s\n"  "- Wipe all (default) app icons from the Dock and show only active apps."
+defaults write com.apple.dock static-only -boolean true
+
+printf "%s\n"  "- Highlight hidden apps in the Dock."
+defaults write com.apple.Dock showhidden -boolean yes;
+
+printf "%s\n"  "- Minimise app to it's icon."
+defaults write com.apple.dock minimize-to-application -boolean YES
+
 
 printf "%s\n\n"  "Finder."
 
