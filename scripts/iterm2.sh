@@ -3,7 +3,7 @@
 printf "%s\n\n" "Configuring iterm2 and fish shell."
 
 # Remove annoying shell last login message.
-cp -rv ./assets/.iterm2/.hushlogin ~
+cp -rv ./assets/.iterm2/.hushlogin ~/.hushlogin
 
 # Copy iterm2 settings to the local system.
 mkdir ~/.config/iterm2
