@@ -1,6 +1,49 @@
 #!/bin/sh
 printf "%s\n\n"  "Global settings."
 
+
+# Set appearance
+# Blue     : 1
+# Graphite : 6
+defaults write NSGlobalDomain AppleAquaColorVariant -int 6
+
+# Highlight color
+# Graphite : `0.780400 0.815700 0.858800`
+# Silver   : `0.776500 0.776500 0.776500`
+# Blue     : `0.709800 0.835300 1.000000`
+defaults write NSGlobalDomain AppleHighlightColor -string '0.780400 0.815700 0.858800'
+
+
+# Automatically hide and show the menu bar
+defaults write NSGlobalDomain "_HIHideMenuBar" -bool true
+
+# Allow Handoff between this Mac and your iCloud devices
+defaults write ~/Library/Preferences/ByHost/com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool true
+
+# Disable Crash Reporter dialog
+defaults write com.apple.CrashReporter DialogType none
+
+# Display crash reports in Notification Center (instead of dialog)
+defaults write com.apple.CrashReporter UseUNC 1
+
+# Save to iCloud by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool true
+
+# Shake mouse cursor to locate
+defaults write CGDisableCursorLocationMagnification -bool false
+
+# Download newly available updates in the background
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool true
+
+# Install app updates
+sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
+
+# Install macOS updates
+sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool true
+
+
+
 printf "%s\n"  "- Expand save panel."
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -43,6 +86,72 @@ defaults write NSGlobalDomain KeyRepeat -integer 2
 printf "%s\n"  "- Set Keyboard > Delay Until Repeat to be the fastest possible from System Preferences."
 defaults write NSGlobalDomain InitialKeyRepeat -integer 15
 
+# Use smart quotes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Set Double and Single quotes
+defaults write NSGlobalDomain NSUserQuotesArray -array '"\""' '"\""' '"'\''"' '"'\''"'
+
+# Use smart dashes
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Correct spelling automatically
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Set Metric Units
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+
+# Mission Control animation duration
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
+# Automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# When switching to an application, switch to a Space with open windows for the application
+defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -bool true
+
+# Group windows by application in Mission Control
+# (i.e. use the old Exposé behavior instead)
+defaults write com.apple.dock expose-group-by-app -bool false
+
+# Displays have seperate Spaces
+defaults write com.apple.spaces spans-displays -bool false
+
+# Show Time Connected in VPN menubar item
+defaults write com.apple.networkConnect VPNShowTime -bool false
+
+# Show Status When Connecting in VPN menubar item
+defaults write com.apple.networkConnect VPNShowStatus -bool false
+
+# Notification banner on screen time
+# Default 5 seconds
+defaults write com.apple.notificationcenterui bannerTime 2
+
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Allow applications downloaded from anywhere
+sudo spctl --master-disable
+
+# Firewall logging
+sudo defaults write /Library/Preferences/com.apple.alf loggingenabled -bool false
+
+# Stealth mode
+sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
+
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "MBP"
+sudo scutil --set HostName "MBP"
+sudo scutil --set LocalHostName "MBP"
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+# Allow guests to login to this computer
+sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+
+
+
 printf "%s\n"  "- Disable keyboard autocorrect."
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
@@ -71,8 +180,38 @@ defaults write com.apple.Dock autohide -boolean true
 printf "%s\n"  "- Resize dock tiles."
 defaults write com.apple.Dock tilesize -integer 48
 
+# Remove all (default) app icons from the Dock
+defaults write com.apple.dock persistent-apps -array
+
 printf "%s\n"  "- Wipe all (default) app icons from the Dock and show only active apps."
 defaults write com.apple.dock static-only -boolean true
+
+# Prefer tabs when opening documents: 'always', 'fullscreen', 'manual'
+defaults write NSGlobalDomain AppleWindowTabbingMode -string 'always'
+
+# Lock the Dock size
+defaults write com.apple.dock size-immutable -bool true
+
+# Dock magnification
+defaults write com.apple.dock magnification -bool false
+
+# Double-click a window's title bar to:
+# None
+# Mimimize
+# Maximize (zoom)
+defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Maximize"
+
+# Auto-hide delay
+defaults write com.apple.dock autohide-delay -float 0
+
+# Spring loaded Dock items
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+
+# Show indicator lights for open applications
+defaults write com.apple.dock show-process-indicators -bool true
+
+# Apple may use this preference to automatically add Launchpad to the Dock
+defaults write com.apple.dock 'checked-for-launchpad' -bool true
 
 printf "%s\n"  "- Highlight hidden apps in the Dock."
 defaults write com.apple.Dock showhidden -boolean yes;
