@@ -1,16 +1,9 @@
-brew "archey"
-brew "cowsay"
-brew "fortune"
-brew "heroku/brew/heroku"
-brew "nethack"
 brew "postgresql", restart_service: true
 brew "sl"
 brew "youtube-dl"
 cask "calibre"
 cask "kindle"
-cask "logitech-options"
 cask "messenger"
-cask "plex-media-server"
 cask "simple-comic"
 cask "teamviewer"
 cask "tigervpn"
@@ -18,7 +11,6 @@ cask "transmission"
 cask "vlc"
 cask "telegram"
 cask "whatsapp"
-mas "com.apple.iMovieApp", id: 408981434
 mas "com.apple.iWork.Keynote", id: 409183694
 mas "com.apple.iWork.Numbers", id: 409203825
 mas "com.apple.iWork.Pages", id: 409201541
