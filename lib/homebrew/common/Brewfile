@@ -26,3 +26,4 @@ cask "spectacle"
 cask "visual-studio-code"
 cask "the-unarchiver"
 mas "com.apple.dt.Xcode", id: 497799835
+mas install 585829637
