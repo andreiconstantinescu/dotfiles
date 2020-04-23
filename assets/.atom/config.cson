@@ -1,0 +1,37 @@
+"*":
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui": {}
+    hyperclick:
+      darwinTriggerKeys: "altKey"
+    use:
+      "atom-ide-diagnostics-ui": "never"
+  "atom-typescript":
+    autocompleteParens: true
+  core:
+    telemetryConsent: "no"
+    titleBar: "custom"
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+  "exception-reporting":
+    userId: "3fc42ca4-e391-4fb2-9d04-1f6c78285cfd"
+  linter: {}
+  "linter-eslint":
+    advanced: {}
+    autofix:
+      fixOnSave: true
+    global: {}
+    lintHtmlFiles: true
+  "linter-ui-default":
+    panelHeight: 301
+    showPanel: true
+  "no-title-bar":
+    automaticTrafficLightsPadding: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      showInStatusBar: true
+    prettierEslintOptions: {}
+  welcome:
+    showOnStartup: false
