@@ -3,7 +3,6 @@
 printf "%s\n\n" "Installing Atom packages."
 
 apm install atom-clock
-apm install atom-ide-ui
 apm install atom-typescript
 apm install busy-signal
 apm install code-time

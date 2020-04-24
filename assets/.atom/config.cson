@@ -1,10 +1,4 @@
 "*":
-  "atom-ide-ui":
-    "atom-ide-diagnostics-ui": {}
-    hyperclick:
-      darwinTriggerKeys: "altKey"
-    use:
-      "atom-ide-diagnostics-ui": "never"
   "atom-typescript":
     autocompleteParens: true
   core:
@@ -16,6 +10,8 @@
     softWrap: true
   "exception-reporting":
     userId: "3fc42ca4-e391-4fb2-9d04-1f6c78285cfd"
+  "file-icons":
+    tabPaneIcon: false
   linter: {}
   "linter-eslint":
     advanced: {}
@@ -24,8 +20,11 @@
     global: {}
     lintHtmlFiles: true
   "linter-ui-default":
-    panelHeight: 301
+    alwaysTakeMinimumSpace: true
+    panelHeight: 297
     showPanel: true
+    showStatusBar: false
+    showTooltip: false
   "no-title-bar":
     automaticTrafficLightsPadding: true
   "prettier-atom":
