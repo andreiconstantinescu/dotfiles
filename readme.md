@@ -1,42 +1,26 @@
 # Dotfiles
 
-My personal `MacOS` ready dotfiles for setting up a new computer. It features:
+Personal `macOS` dotfiles to set up a new computer.
 
-- macOS defaults.
-- homebrew CLI tools and GUI apps.
-- shell and iTerm2 configs.
-- global `git` settings.
-- VS Code config.
+## Install
 
-## Manual
-
-### Packages installation options
-
-By default, it will install workplace safe packages, to install the personal packages, pass the `-p` flag.
+By default, it will install workplace safe packages, to modify use one of the following flags:
 
 ```bash
   -p: Personal Packages
 ```
 
-### VS Code settings and packages sync
+#### Atom settings and packages sync
 
-The only extension installed is [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) in order to enable the sync and upload/download of existing settings and packages.
+The only extension installed is [Settings Sync](https://atom.io/packages/sync-settings).
 
-In order to sync an existing config at install, you will be prompted to add the `gistId` of the existing settings gist and the `githubToken` in order to be able to access and update the private gist.
+To sync an existing config at install time, you need to provide the `gistId` of the existing settings gist and the `githubToken` to access the private gist.
 
-If none of the keys are provided, when opening VS Code you will be prompted to provide them.
-
-## Install
-
-```sh
-  > git clone https://github.com/andreiconstantinescu/dotfiles.git
+```bash
+  > git clone https://github.com/sylar/dotfiles.git
   > cd dotfiles/
   > ./install.sh [-p]
 ```
-
-## Feedback/Suggestions
-
-`PR`s are more than welcomed.
 
 ## Credits
 
