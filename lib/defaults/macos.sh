@@ -1,6 +1,7 @@
 #!/bin/sh
 printf "%s\n\n"  "Global settings."
 
+read -p "Computer Name: " computerName
 
 # Set appearance
 # Blue     : 1
@@ -139,18 +140,14 @@ sudo defaults write /Library/Preferences/com.apple.alf loggingenabled -bool fals
 # Stealth mode
 sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
 
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "MBP"
-sudo scutil --set HostName "MBP"
-sudo scutil --set LocalHostName "MBP"
+sudo scutil --set ComputerName "$computerName"
+sudo scutil --set HostName "$computerName"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
 # Allow guests to login to this computer
 sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
-
-
 
 printf "%s\n"  "- Disable keyboard autocorrect."
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
@@ -302,5 +299,5 @@ if [ $1 ] && [ $1 == $FLAG ]; then
   printf "%s\n\n"  "iTrerm2.app."
 
   printf "%s\n"  "- Use the preferences in the iCloud folder."
-  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "/Users/tvararu/Documents/config/iterm"
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "/Users/andrei/Documents/configs/iterm"
 fi
