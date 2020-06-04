@@ -273,7 +273,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 printf "%s\n"  "- Change search engine to DuckDuckGo."
 
-
 if [ $1 ] && [ $1 == $FLAG ]; then
 
   printf "%s\n\n"  "Transmission.app."
@@ -294,5 +293,14 @@ if [ $1 ] && [ $1 == $FLAG ]; then
 
   printf "%s\n"  "- Hide the legal disclaimer."
   defaults write org.m0k.transmission WarningLegal -bool false
-  
+
+  printf "%s\n"  "- Set up IP block list."
+  defaults write org.m0k.transmission BlocklistNew -bool true
+  defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+  defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+
+  printf "%s\n\n"  "iTrerm2.app."
+
+  printf "%s\n"  "- Use the preferences in the iCloud folder."
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "/Users/tvararu/Documents/config/iterm"
 fi

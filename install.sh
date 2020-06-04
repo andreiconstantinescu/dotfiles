@@ -19,8 +19,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install global node packages.
 ./scripts/npm.sh
 
-# Configure iTerm2.
-./scripts/iterm2.sh
+# Remove new shell ooutput
+touch ~/.hushlogin
 
 # Configure SSH.
 ./scripts/git.sh
