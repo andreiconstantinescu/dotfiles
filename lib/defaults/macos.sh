@@ -181,9 +181,6 @@ defaults write com.apple.Dock tilesize -integer 48
 # printf "%s\n"  "- Wipe all (default) app icons from the Dock and show only active apps."
 # defaults write com.apple.dock static-only -boolean true
 
-# Prefer tabs when opening documents: 'always', 'fullscreen', 'manual'
-defaults write NSGlobalDomain AppleWindowTabbingMode -string 'always'
-
 # Lock the Dock size
 defaults write com.apple.dock size-immutable -bool true
 
