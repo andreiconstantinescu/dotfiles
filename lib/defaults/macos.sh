@@ -43,8 +43,6 @@ sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool tru
 # Install macOS updates
 sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool true
 
-
-
 printf "%s\n"  "- Expand save panel."
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
