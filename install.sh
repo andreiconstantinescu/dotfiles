@@ -16,14 +16,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install homebrew and apps.
 ./scripts/homebrew.sh $1
 
-# Install Node
-./scripts/asdf.sh
-
 # Install global node packages.
 ./scripts/npm.sh
 
 # Configure VS Code.
- ./scripts/vscode.sh
+./scripts/vscode.sh
 
 # Remove new shell ooutput
 touch ~/.hushlogin

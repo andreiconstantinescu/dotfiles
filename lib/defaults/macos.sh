@@ -179,7 +179,7 @@ defaults write com.apple.Dock tilesize -integer 48
 # defaults write com.apple.dock persistent-apps -array
 
 # printf "%s\n"  "- Wipe all (default) app icons from the Dock and show only active apps."
-# defaults write com.apple.dock static-only -boolean true
+defaults write com.apple.dock static-only -boolean true
 
 # Lock the Dock size
 defaults write com.apple.dock size-immutable -bool true

@@ -17,6 +17,7 @@ fi
 
 # Install common brew packages.
 ./lib/homebrew/common/common.sh
+sudo xcodebuild -license accept
 
 # Install personal brew packages.
 if [ $1 ] && [ $1 == $FLAG ]; then
